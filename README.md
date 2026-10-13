@@ -107,6 +107,13 @@ other than a `.csw` file; a `DefinitionAsset` may carry only its `SHA256` and
 `VerifyIndex` and `VerifyDist` work on a gallery folder; `GenerateKey`,
 `ParsePrivateKey` and `ParsePublicKey` handle the signing keys.
 
+## Releasing
+
+Tag `vX.Y.Z` on `main` and push the tag. The `Release` workflow runs the
+checks and then creates the GitHub Release with generated notes (it does
+nothing if a release for the tag already exists). The Go module proxy picks
+the tag up on first request, for example `go get github.com/crostream/csw@vX.Y.Z`.
+
 ## License
 
 Apache-2.0; see `LICENSE`.
